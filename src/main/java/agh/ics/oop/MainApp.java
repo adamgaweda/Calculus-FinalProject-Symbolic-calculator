@@ -10,7 +10,7 @@ public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("plot.fxml")
+                getClass().getResource("agh.ics.oop/plot.fxml")
         );
         stage.setScene(new Scene(loader.load()));
         stage.setTitle("MES 1D");
