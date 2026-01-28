@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="agh.ics.oop.PlotController">
+
+    <LineChart fx:id="chart"
+               title="Rozwiązanie MES"
+               prefWidth="800"
+               prefHeight="600">
+
+        <xAxis>
+            <NumberAxis label="x"/>
+        </xAxis>
+
+        <yAxis>
+            <NumberAxis label="u(x)"/>
+        </yAxis>
+
+    </LineChart>
+</AnchorPane>
