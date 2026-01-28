@@ -4,7 +4,7 @@ import static java.lang.Math.sqrt;
 
 public class Calculus {
 
-    static double[][] mes(int n) {
+    public static double[][] mes(int n) {
         double d = 2;
         double h = d/n;
         double[] x  = new double[n+1];
@@ -38,7 +38,7 @@ public class Calculus {
                     for (int m=0;m<2;m++){
                         B[e+k][e+m]+=J*(dN[k]*dN[m]-N[k]*N[m]);
                     }
-                    L[e+k]+= Math.sin(shift)*N[k]*J;
+                    L[e+k]+= 5*Math.sin(shift*2*Math.acos(-1))*N[k]*J;
                     //wagi są 1, więc pomijam w obliczeniach
                 }
 
@@ -51,7 +51,7 @@ public class Calculus {
             B[0][i]=0;
         }
         B[0][0]=1;
-        L[0]=-2;
+        L[0]=1;
 
         double[] answer= Gauss_elim(B,L);
         double[][] wynik = new double[n+1][2];
@@ -62,10 +62,15 @@ public class Calculus {
             wynik[i][1]=answer[i];
         }
 
+        System.out.println("\nRozwiązanie u(x):");
+        for (int i=0; i<=n; i++) {
+            System.out.printf("x=%.3f, u=%.5f\n", wynik[i][0], wynik[i][1]);
+        }
+
         return wynik;
     }
 
-    static double[] Gauss_elim(double[][] B, double[] L ) {
+    private static double[] Gauss_elim(double[][] B, double[] L ) {
         int n = L.length;
         for(int i=0;i<n;i++){
             double pivot = B[i][i];
